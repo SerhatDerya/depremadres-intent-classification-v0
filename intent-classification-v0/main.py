@@ -3,15 +3,28 @@ import pg_ops
 import run_zsc as zsc
 from tqdm import tqdm
 
+text = """@brstnhrz @albyrkaysnrr #depremadres 
+https://t.co/r9F70fbOL5
 
-conn = pg_ops.connect_to_db()
+Abdurrahman Albayrak
+Pınar İlkay Albayrak
+Ruşen Ali Albayrak
+
+Emek Rüstem Tümer Paşa Cd. No:31 Gözde Servis üstü Hatay/Antakya 
+
+44 saattir haber alınamıyor"""
+
+# Using OpenAI
+## res = open_ai.data_extractor(text)
+
+#conn = pg_ops.connect_to_db()
 
 plot_data = {"key": rbc.labels, "count": [0] * len(rbc.labels)}
 
 # is_done -> False/True based on processed or not
 # intent_result -> labels with separated by comma
 # Get data
-data = pg_ops.get_data(conn, 'tweets_depremaddress', ['id', 'full_text'], 'is_done = False OR is_done = True') # intent_result
+#data = pg_ops.get_data(conn, 'tweets_depremaddress', ['id', 'full_text'], 'is_done = False OR is_done = True') # intent_result
 
 # mock call for getting multiple clause filtered data
 # data = pg_ops.get_data(conn, 'tweets_depremaddress', ['id', 'full_text'], 'is_done = True AND (intent_result = '') IS NOT FALSE')
