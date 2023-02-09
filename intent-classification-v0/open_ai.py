@@ -6,7 +6,7 @@ def data_extractor(text):
     clean_text = pp.clean_hash_ment(text)
 
     # openai connection
-    openai.api_key = "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"
+    openai.api_key = "YOUR_API_KEY"
     prompt = "cümlesindeki tam adres, adresteki il, adresteki ilçe, kişi, telefon, durum bilgilerini düzenli bir formatta ve Türkçe dilinde yeniden yaz. eğer bir bilgi belirtilmemişse 'belirtilmemiş' yaz. hashtag'leri ve mention'ları dikkate alma. eğer bir şehrin veya ilçenin kısaltması yazılmışsa tam haline çevir. eğer 'https://t.co' ile başlayan bir link varsa o konum linkidir. onu da konum linki olarak belirt.  yazdığım cümleyi yeniden yazmanı istemiyorum."
     response = openai.Completion.create(
         model="text-davinci-003",
